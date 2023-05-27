@@ -5,6 +5,7 @@ import { searchedMovies } from '../../functions/GetMovieList'
 import { globalData } from '../../App'
 const Header = () => {
   const context = useContext(globalData)
+  console.log(0 || 1 && 0 || 3);
   return (
     <>
       <div className="header">

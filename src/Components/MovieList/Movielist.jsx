@@ -19,7 +19,7 @@ const Movielist = ({allMovies}) => {
   return (
     <>
     <div className="movielist">
-      <h2> {category && category} </h2>
+      <h2 style={{textAlign:"center"}}> {category && category.toUpperCase()} </h2>
       <div className="movie_list">
         <Moviecard
           allMovies={
