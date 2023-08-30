@@ -9,7 +9,6 @@ const Card = ({ movies }) => {
         {movies ? (
           <>
             {movies.map((ele) => {
-              // console.log(ele && ele.poster_path);
               return (
                 <>
                   <Link to={`/moviedetails/${ele.id}`}>

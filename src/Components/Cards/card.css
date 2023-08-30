@@ -3,27 +3,29 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  gap: 15px;
 }
 
 .card {
   display: inline-block;
   position: relative;
-  border: 10px;
+  border-radius: 24px;
   margin: 0.5rem;
   cursor: pointer;
   height: 300px;
   min-width: 200px;
-  border: 1px solid grey;
+  border: 2px solid grey;
   overflow: hidden;
   transition: 1s;
 }
 
 .card:hover{
   transform: scale(1.1);
+  border: 2px solid rgb(33, 150, 243);;
 }
 .cardImg {
   height: 300px;
-  width: 220px;
+  width: 200px;
 }
 
 .cardOverlay {
