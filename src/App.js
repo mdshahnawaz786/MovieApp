@@ -4,7 +4,7 @@ import { Route,Routes } from 'react-router-dom';
 import Navbarrr from './Components/Navbar/Navbarrr';
 import Slider from './Components/ImageSlider/Slider';
 import { useEffect } from 'react';
-import { popularMoviesApi, topRatedMoviesApi,upcomingMoviesApi,trendingMoviesApi,comedyMoviesApi, actionMoviesApi , horroMoviesApi } from './Components/Functions/Functions';
+import { allMoviesFn } from './Components/Functions/Functions';
 import { useDispatch } from 'react-redux';
 import Allmovie from './Components/allMovies/Allmovie';
 import Popular from './Components/Popular/Popular';
@@ -24,13 +24,7 @@ function App() {
   const dispatch = useDispatch()
 
   useEffect(()=>{
-     popularMoviesApi(dispatch)
-     topRatedMoviesApi(dispatch)
-    upcomingMoviesApi(dispatch)
-    trendingMoviesApi(dispatch)
-    comedyMoviesApi(dispatch)
-    actionMoviesApi(dispatch)
-    horroMoviesApi(dispatch)
+    allMoviesFn(dispatch)
   },[])
 
   return (

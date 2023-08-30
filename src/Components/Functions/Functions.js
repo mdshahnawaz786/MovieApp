@@ -150,3 +150,9 @@ function isDuplicate(filterArr, arr){
     }
     return true
 }
+
+
+export async function allMoviesFn(dispatch){
+  Promise.allSettled([popularMoviesApi(dispatch),topRatedMoviesApi(dispatch),upcomingMoviesApi(dispatch),trendingMoviesApi(dispatch),comedyMoviesApi(dispatch),actionMoviesApi(dispatch),horroMoviesApi(dispatch)])
+
+}
