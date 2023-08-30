@@ -1,46 +1,58 @@
-import "./App.css";
-import { Routes, Route } from "react-router-dom";
-import Header from "./Components/Header/Header";
-import Home from "./Pages/Home/Home";
-import { createContext, useEffect, useState } from "react";
-import { getMovieList } from "./functions/GetMovieList";
-import Moviedetails from "./Pages/MovieDetails/Moviedetails";
-import Movielist from "./Components/MovieList/Movielist";
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Route,Routes } from 'react-router-dom';
+import Navbarrr from './Components/Navbar/Navbarrr';
+import Slider from './Components/ImageSlider/Slider';
+import { useEffect } from 'react';
+import { popularMoviesApi, topRatedMoviesApi,upcomingMoviesApi,trendingMoviesApi,comedyMoviesApi, actionMoviesApi , horroMoviesApi } from './Components/Functions/Functions';
+import { useDispatch } from 'react-redux';
+import Allmovie from './Components/allMovies/Allmovie';
+import Popular from './Components/Popular/Popular';
+import TopRated from './Components/Top_Rated/TopRated';
+import Trending from './Components/Trending/Trending';
+import Upcoming from './Components/UpComing/Upcoming';
+import MovieDetails from './Components/MovieDetails/MovieDetails';
+import Search from './Components/Search/Search';
+import MyFooter from './Components/appFooter/MyFooter';
+import Comedy from './Components/Comedy/Comedy';
+import Horror from './Components/Horror/Horror';
+import Action from './Components/Action/Action';
 
-export const globalData = createContext();
+
 
 function App() {
-  const [popularMoviesFromApi, setPopularMoviesFromApi] = useState([]);
-  const [upcomingMoviesFromApi, setUpcomingMoviesFromApi] = useState([]);
-  const [topRatedMoviesFromApi, setTopRatedMoviesFromApi] = useState([]);
-  const [state, setState] = useState([]);
+  const dispatch = useDispatch()
 
-  useEffect(() => {
-    getMovieList(setPopularMoviesFromApi, "popular");
-    getMovieList(setTopRatedMoviesFromApi, "top_rated");
-    getMovieList(setUpcomingMoviesFromApi, "upcoming");
-  }, []);
+  useEffect(()=>{
+     popularMoviesApi(dispatch)
+     topRatedMoviesApi(dispatch)
+    upcomingMoviesApi(dispatch)
+    trendingMoviesApi(dispatch)
+    comedyMoviesApi(dispatch)
+    actionMoviesApi(dispatch)
+    horroMoviesApi(dispatch)
+  },[])
 
   return (
-    <globalData.Provider
-      value={{
-        popularMoviesFromApi: popularMoviesFromApi,
-        topRatedMoviesFromApi: topRatedMoviesFromApi,
-        upcomingMoviesFromApi: upcomingMoviesFromApi,
-        state, setState
-      }}
-    >
-      <div className="App">
-        <Header />
-        <Routes>
-        <Route path="/" element={<Home />}></Route>
-            <Route path="movie/:id" element={<Moviedetails />}></Route>
-            <Route path="movies/:category" element={<Movielist />}></Route>
-            <Route path="/*" element={<h1>Page Not Found</h1>}></Route>
-        </Routes>
-      </div>
-    </globalData.Provider>
+    <div className="App">
+     
+     <Routes>
+      <Route path='/' element={<><Navbarrr/><Slider/><Allmovie/><MyFooter/></>}/>
+      <Route path='/popular' element={<><Navbarrr/><Popular/><MyFooter/></>}/>
+      <Route path='/toprated' element={<><Navbarrr/><TopRated/><MyFooter/></>}/>
+      <Route path='/trending' element={<><Navbarrr/><Trending/><MyFooter/></>}/>
+      <Route path='/upcoming' element={<><Navbarrr/><Upcoming/><MyFooter/></>}/>
+      <Route path='/comedy' element={<><Navbarrr/><Comedy/><MyFooter/></>}/>
+      <Route path='/horror' element={<><Navbarrr/><Horror/><MyFooter/></>}/>
+      <Route path='/action' element={<><Navbarrr/><Action/><MyFooter/></>}/>
+      <Route path='moviedetails/:id' element={<><Navbarrr/><MovieDetails/><MyFooter/></>} />
+      <Route path='search' element={<><Navbarrr/><Search/><MyFooter/></>} />
+      <Route path="/*" element={<h1>Page Not Found</h1>}></Route>
+     </Routes>
+    </div>
   );
 }
 
 export default App;
+
+
