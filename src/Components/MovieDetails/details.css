@@ -308,10 +308,3 @@ p span {
   display: flex;
 }
 
-.genresButton{
-  background-color: transparent;
-  color: white;
-  border: 1px solid rgb(33, 150, 243);
-  color: rgb(158, 188, 188);
-  font-weight: 700;
-}

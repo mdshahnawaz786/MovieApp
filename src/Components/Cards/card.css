@@ -19,9 +19,9 @@
   transition: 1s;
 }
 
-.card:hover{
+.card:hover {
   transform: scale(1.1);
-  border: 2px solid rgb(33, 150, 243);;
+  border: 2px solid rgb(33, 150, 243);
 }
 .cardImg {
   height: 300px;
@@ -49,8 +49,6 @@
 
 .cardOverlay:hover {
   opacity: 1;
-  
-  
 }
 
 .card_Title {

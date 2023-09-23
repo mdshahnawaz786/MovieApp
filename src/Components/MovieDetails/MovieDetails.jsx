@@ -101,7 +101,7 @@ const MovieDetails = () => {
                   {state &&
                     state.genres.map((ele) => {
                       return <> &nbsp;
-                        <button className="genresButton"><span>{ele.name}</span></button>&nbsp;
+                        <span>{ele.name}</span>
                       </>;
                     })}
                 </p>
