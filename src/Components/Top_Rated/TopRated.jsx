@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "../Cards/Card";
 import { useSelector } from "react-redux";
-import './toprated.css'
+import "./toprated.css";
 
 const TopRated = () => {
   const toprated = useSelector((storeData) => {
@@ -10,10 +10,7 @@ const TopRated = () => {
   return (
     <>
       <div>
-        <h2 className="topratedrHeading">
-          Top Rated Movies
-        </h2>
-
+        <h2 className="topratedrHeading">Top Rated Movies</h2>
         <Card movies={toprated} />
       </div>
     </>

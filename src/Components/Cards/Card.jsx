@@ -12,8 +12,18 @@ const Card = ({ movies }) => {
               return (
                 <>
                   <Link to={`/moviedetails/${ele.id}`}>
-                    <div className="card" >
-                      <img className="cardImg" src={ele.poster_path !== null ? `https://image.tmdb.org/t/p/original/${ele && ele.poster_path}` : 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/ERR0R_NO_IMAGE_FOUND.jpg/640px-ERR0R_NO_IMAGE_FOUND.jpg'}alt="image" />
+                    <div className="card">
+                      <img
+                        className="cardImg"
+                        src={
+                          ele.poster_path !== null
+                            ? `https://image.tmdb.org/t/p/original/${
+                                ele && ele.poster_path
+                              }`
+                            : "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/ERR0R_NO_IMAGE_FOUND.jpg/640px-ERR0R_NO_IMAGE_FOUND.jpg"
+                        }
+                        alt="image"
+                      />
                       <div className="cardOverlay">
                         <div className="card_Title">
                           {ele && ele.original_title}
@@ -41,7 +51,3 @@ const Card = ({ movies }) => {
 };
 
 export default Card;
-
-
-
-

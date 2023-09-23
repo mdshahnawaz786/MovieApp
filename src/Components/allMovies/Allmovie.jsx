@@ -8,16 +8,6 @@ const Allmovie = () => {
   });
   return (
     <div>
-      {/* <h2
-        style={{
-          fontSize: "3rem",
-          fontWeight: "700",
-          color: "rgb(113, 188, 242)",
-          textAlign: "center",
-        }}
-      >
-        All Movies
-      </h2> */}
       <Card movies={all} />
     </div>
   );

@@ -25,13 +25,10 @@
   .trial img {
     height: 120%;
     width: 243%;
-    /* box-shadow: 0 4px 3px 10px green */
     box-shadow: 0.5rem 0.5rem red, -0.5rem -0.5rem rgb(13, 154, 252);
   }
 
   .movieFullDetails {
-    /* position: absolute; */
-    /* bottom: 0; */
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -76,16 +73,13 @@
   flex-direction: column;
   background-color: black;
   position: relative;
-  /* border: 5px solid yellow; */
   overflow-x: hidden;
 }
 
 .moviePoster {
-  /* height: 550px; */
   height: 400px;
   width: 100%;
   position: relative;
-  /* border: 5px solid white; */
 }
 
 .innermoviePoster {
@@ -114,13 +108,10 @@
 }
 
 .movieFullDetails {
-  /* position: absolute; */
-  /* bottom: 0; */
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   width: 60%;
-  /* border: 5px solid white; */
 }
 
 .movieTitle {
@@ -160,14 +151,11 @@ p span {
   top: -80px;
   gap: 10rem;
   padding: 0 5rem;
-  /* height: 370px; */
   height: 450px;
   background: linear-gradient(rgba(0, 0, 0, 0.132), black);
-  /* border: 5px solid red; */
 }
 
 .trial {
-  /* height: 400px; */
   height: 350px;
   width: 300px;
   display: flex;
@@ -178,10 +166,8 @@ p span {
 .trial img {
   height: 100%;
   width: 100%;
-  /* box-shadow: 0 4px 3px 10px green */
   box-shadow: 0.5rem 0.5rem red, -0.5rem -0.5rem rgb(13, 154, 252);
 }
-
 
 .lastImageContsiner {
   height: 100%;
@@ -207,7 +193,6 @@ p span {
   flex-direction: column;
   align-items: center;
   font-family: "Roboto Condensed", sans-serif;
-  /* border: 1px solid red; */
 }
 
 .cast img {
@@ -307,4 +292,3 @@ p span {
 .genresDiv {
   display: flex;
 }
-

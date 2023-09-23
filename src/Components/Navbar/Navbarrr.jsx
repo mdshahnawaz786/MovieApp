@@ -7,21 +7,18 @@ import Navbar from "react-bootstrap/Navbar";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { filterSearch } from "../Functions/Functions";
-import './navStyling.css'
-import movieIcon from "../../logo/logo.png"
-
+import "./navStyling.css";
+import movieIcon from "../../logo/logo.png";
 
 const Navbarrr = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const all = useSelector((storeData) => {
     return storeData.all;
-
   });
 
   const [searchMovie, setSearchMovie] = useState("");
 
-  
   return (
     <>
       <div className="Navbarrr">
@@ -39,9 +36,8 @@ const Navbarrr = () => {
                 style={{ maxHeight: "100px" }}
                 navbarScroll
               >
-                
                 <Nav.Link href="#action1">
-                  <NavLink to='/'>Home</NavLink>
+                  <NavLink to="/">Home</NavLink>
                 </Nav.Link>
                 <Nav.Link href="#action1">
                   <NavLink to="/popular">Popular</NavLink>
@@ -80,7 +76,7 @@ const Navbarrr = () => {
                   <Button
                     variant="outline-success"
                     onClick={() => {
-                        filterSearch(dispatch, all, searchMovie);
+                      filterSearch(dispatch, all, searchMovie);
                     }}
                   >
                     Search

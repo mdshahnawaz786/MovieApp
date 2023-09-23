@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "../Cards/Card";
 import { useSelector } from "react-redux";
-import './upcoming.css'
+import "./upcoming.css";
 
 const Upcoming = () => {
   const upcoming = useSelector((storeData) => {
@@ -10,10 +10,7 @@ const Upcoming = () => {
   return (
     <>
       <div>
-        <h2 className="upcomingHeading">
-          Upcoming Movies
-        </h2>
-
+        <h2 className="upcomingHeading">Upcoming Movies</h2>
         <Card movies={upcoming} />
       </div>
     </>

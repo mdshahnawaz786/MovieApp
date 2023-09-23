@@ -30,12 +30,13 @@ const MovieDetails = () => {
             <div className="moviePoster">
               <img
                 className="moviedetailImage"
-                src={state.poster_path !== null ? `https://image.tmdb.org/t/p/original/${state && state.backdrop_path}` : 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/ERR0R_NO_IMAGE_FOUND.jpg/640px-ERR0R_NO_IMAGE_FOUND.jpg'}
-                
-                
-                // {`https://image.tmdb.org/t/p/original/${
-                //   state && state.backdrop_path
-                // }`}
+                src={
+                  state.poster_path !== null
+                    ? `https://image.tmdb.org/t/p/original/${
+                        state && state.backdrop_path
+                      }`
+                    : "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/ERR0R_NO_IMAGE_FOUND.jpg/640px-ERR0R_NO_IMAGE_FOUND.jpg"
+                }
                 alt=""
               />
 
@@ -55,11 +56,13 @@ const MovieDetails = () => {
             <div className="finalTrial">
               <div className="trial">
                 <img
-                                src={state.poster_path !== null ? `https://image.tmdb.org/t/p/original/${state && state.poster_path}` : 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/ERR0R_NO_IMAGE_FOUND.jpg/640px-ERR0R_NO_IMAGE_FOUND.jpg'}
-
-                  // src={`https://image.tmdb.org/t/p/original/${
-                  //   state && state.poster_path
-                  // }`}
+                  src={
+                    state.poster_path !== null
+                      ? `https://image.tmdb.org/t/p/original/${
+                          state && state.poster_path
+                        }`
+                      : "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/ERR0R_NO_IMAGE_FOUND.jpg/640px-ERR0R_NO_IMAGE_FOUND.jpg"
+                  }
                 />
               </div>
 
@@ -93,16 +96,19 @@ const MovieDetails = () => {
                   {state.length !== 0 &&
                     state.spoken_languages.map((ele) => {
                       return <> {<span>{`${ele.english_name} `}</span>}</>;
-                        
                     })}
                 </p>
                 <p className="languages">
                   Genres:
                   {state &&
                     state.genres.map((ele) => {
-                      return <> &nbsp;
-                        <span>{ele.name}</span>
-                      </>;
+                      return (
+                        <>
+                          {" "}
+                          &nbsp;
+                          <span>{ele.name}</span>
+                        </>
+                      );
                     })}
                 </p>
 
